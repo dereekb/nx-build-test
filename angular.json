@@ -3,6 +3,8 @@
   "version": 2,
   "projects": {
     "build-test": "apps/build-test",
-    "build-test-e2e": "apps/build-test-e2e"
+    "build-test-e2e": "apps/build-test-e2e",
+    "firebase": "libs/firebase",
+    "firebase-two": "libs/firebase-two"
   }
 }
