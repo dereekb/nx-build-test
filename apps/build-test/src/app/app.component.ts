@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { firebase } from '@dereekb/test-build-firebase';
 
 @Component({
   selector: 'build-test-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'build-test';
+
+  test() {
+    firebase(); // import to require it
+  }
 }

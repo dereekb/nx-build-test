@@ -4,10 +4,17 @@
   "projectType": "library",
   "targets": {
     "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "echo",
+        "color": true
+      }
+    },
+    "build-base": {
       "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/firebase-two",
+        "outputPath": "dist/libs/firebase/test",
         "tsConfig": "libs/firebase-two/tsconfig.lib.json",
         "packageJson": "libs/firebase-two/package.json",
         "main": "libs/firebase-two/src/index.ts",
@@ -30,5 +37,6 @@
       }
     }
   },
+  "implicitDependencies": ["firebase"],
   "tags": []
 }

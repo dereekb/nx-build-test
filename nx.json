@@ -30,9 +30,10 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["build-base", "^build"]
+    },
+    "build-base": {
+      "dependsOn": ["^build-base"]
     }
   },
   "generators": {
