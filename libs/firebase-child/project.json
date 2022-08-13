@@ -1,15 +1,15 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/firebase/src",
+  "sourceRoot": "libs/firebase-child/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nrwl/workspace:run-commands",
-      "outputs": ["dist/libs/firebase"],
+      "outputs": ["dist/libs/firebase-child"],
       "options": {
         "commands": [
           {
-            "command": "npx nx run firebase-two:build-base"
+            "command": "npx nx run firebase-child-test:build-base"
           }
         ],
         "parallel": false
@@ -19,29 +19,29 @@
       "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/firebase",
-        "tsConfig": "libs/firebase/tsconfig.lib.json",
-        "packageJson": "libs/firebase/package.json",
-        "main": "libs/firebase/src/index.ts",
-        "assets": ["libs/firebase/*.md"]
+        "outputPath": "dist/libs/firebase-child",
+        "tsConfig": "libs/firebase-child/tsconfig.lib.json",
+        "packageJson": "libs/firebase-child/package.json",
+        "main": "libs/firebase-child/src/index.ts",
+        "assets": ["libs/firebase-child/*.md"]
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/firebase/**/*.ts"]
+        "lintFilePatterns": ["libs/firebase-child/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/firebase"],
+      "outputs": ["coverage/libs/firebase-child"],
       "options": {
-        "jestConfig": "libs/firebase/jest.config.ts",
+        "jestConfig": "libs/firebase-child/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "implicitDependencies": ["!firebase-two", "!firebase-child-test"],
+  "implicitDependencies": ["!firebase-child"],
   "tags": []
 }

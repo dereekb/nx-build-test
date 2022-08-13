@@ -5,6 +5,9 @@
     "build-test": "apps/build-test",
     "build-test-e2e": "apps/build-test-e2e",
     "firebase": "libs/firebase",
-    "firebase-two": "libs/firebase-two"
+    "firebase-child": "libs/firebase-child",
+    "firebase-child-test": "libs/firebase-child-test",
+    "firebase-two": "libs/firebase-two",
+    "util": "libs/util"
   }
 }

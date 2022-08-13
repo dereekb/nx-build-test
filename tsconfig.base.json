@@ -16,7 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@dereekb/test-build-firebase": ["libs/firebase/src/index.ts"],
-      "@dereekb/test-build-firebase-two": ["libs/firebase-two/src/index.ts"]
+      "@dereekb/test-build-firebase-two": ["libs/firebase-two/src/index.ts"],
+      "@dereekb/test-firebase-child": ["libs/firebase-child/src/index.ts"],
+      "@dereekb/test-firebase-child-test": [
+        "libs/firebase-child-test/src/index.ts"
+      ],
+      "@dereekb/test-util": ["libs/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -18,19 +18,14 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "build-base", "lint", "test", "e2e"],
         "accessToken": "NjYxODBjOWUtNmU3NC00NDkyLTk1ZDYtNjg0NGRiZjA1ZDAzfHJlYWQtd3JpdGU="
       }
     }
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["build-base", "^build"]
+      "dependsOn": ["^build", "build-base"]
     },
     "build-base": {
       "dependsOn": ["^build-base"]

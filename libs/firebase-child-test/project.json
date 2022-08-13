@@ -1,0 +1,41 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/firebase-child-test/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "echo",
+        "color": true
+      }
+    },
+    "build-base": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/firebase-child/test",
+        "tsConfig": "libs/firebase-child-test/tsconfig.lib.json",
+        "packageJson": "libs/firebase-child-test/package.json",
+        "main": "libs/firebase-child-test/src/index.ts",
+        "assets": ["libs/firebase-child-test/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/firebase-child-test/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/firebase-child-test"],
+      "options": {
+        "jestConfig": "libs/firebase-child-test/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
